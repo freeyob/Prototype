@@ -1,0 +1,17 @@
+.mymetadata
+.checkstyle
+.classpath
+.project
+.class
+.war
+.zip
+.rar
+.idea
+*.iml
+.gradle
+gradle
+build
+local.properties
+gradlew*
+captures/
+/EOP/*.apk
