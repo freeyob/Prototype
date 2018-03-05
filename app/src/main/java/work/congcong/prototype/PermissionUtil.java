@@ -1,11 +1,9 @@
 package work.congcong.prototype;
 
 import android.app.Activity;
-import android.app.AppOpsManager;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Binder;
 import android.os.Build;
 import android.provider.Settings;
 import android.util.Log;
@@ -21,7 +19,7 @@ public class PermissionUtil {
     private static final int REQUEST_CODE = 123;
 
     //判断权限
-    public static boolean commonROMPermissionCheck(Context context) {
+    public static boolean permissionCheck(Context context) {
         Boolean result = true;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             try {
@@ -45,7 +43,7 @@ public class PermissionUtil {
     public static void onActivityResult(int requestCode, int resultCode, Intent data,Activity activity) {
         if (requestCode == REQUEST_CODE) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                if (commonROMPermissionCheck(activity)) {
+                if (permissionCheck(activity)) {
                     Log.i(TAG, "onActivityResult granted");
                 }else {
                     Log.i(TAG, "onActivityResult deny");
@@ -54,4 +52,5 @@ public class PermissionUtil {
             }
         }
     }
+
 }

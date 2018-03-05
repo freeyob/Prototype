@@ -1,11 +1,9 @@
 package work.congcong.prototype;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -46,7 +44,7 @@ public class MainActivity extends Activity {
         show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               if(PermissionUtil.commonROMPermissionCheck(MainActivity.this)){
+               if(PermissionUtil.permissionCheck(MainActivity.this)){
                     Toast.makeText(MainActivity.this,"已经有权限了",Toast.LENGTH_SHORT).show();
                }else {
                     PermissionUtil.requestAlertWindowPermission(MainActivity.this);
